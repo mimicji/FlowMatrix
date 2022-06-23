@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package acorn_obj;
+
+message StateFormat {
+	string archstring 		= 1;
+	repeated uint32 reg_list 	= 2;
+	repeated uint32 mem_list 	= 3;
+}
+
+message Condition {
+	enum CondOp {
+		INVALID_COND = 0;
+		DNF = 1;
+		LOGIC = 2;
+		CMP = 3;
+	}
+	CondOp cond_op 			= 1;
+	oneof criteria {
+		DNFCriteria dnf_criteria 	= 2;
+		LogicCriteria logic_criteria 	= 3;
+		CMPCriteria cmp_criteria 	= 4;
+	}
+}
+
+message DNFCriteria {
+	repeated DNFPair dnf_pairs 	= 1;
+}
+
+message DNFPair {
+	uint64 mask 			= 1;
+	uint64 criteria 		= 2;
+}
+
+message LogicCriteria {
+}
+
+message CMPCriteria {
+}
+
+message TaintRule {
+	StateFormat state_format 	= 1;
+	Condition condition 		= 2;
+	repeated UseDef use_def 	= 3;
+}
+
+message UseDef {
+	uint32 use			= 1;
+	repeated uint32	defs 		= 2;
+}
