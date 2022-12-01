@@ -11,7 +11,7 @@
 #include <chrono>
 
 // #define DEBUG
-#define TIME_MEASUREMENT
+// #define TIME_MEASUREMENT
 
 #define BUFFER_INIT_SIZE 204800000
 
