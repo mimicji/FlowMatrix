@@ -19,17 +19,19 @@ Simply build with make at the project root directory, use:
 ## Usage
     $ ./bin/QueryCLI <path_to_database>
 ### 1. Examples
-Load a database:
+You may find a database with 2 examples from [Release](https://github.com/mimicji/FlowMatrix/releases/download/ExampleDB/examples.db). 
+
+To load this database: 
 
     $ ./bin/QueryCLI ./examples.db
     
-Example of sample1: data flows of two 'mov' instructions. Check [sample1](examples/sample1/) for more details.
+Example: [sample1] data flows of two 'mov' instructions. Check [sample1](examples/sample1/) for more details.
 
     FMQuery> WorkOn sample1
     
     FMQuery> Query INSTR 1 TO INSTR 2
 
-Example of sample2: data flows between buffer read and buffer write. Check [sample2](examples/sample2/) for more details.
+Example: [sample2] data flows between buffer read and buffer write. Check [sample2](examples/sample2/) for more details.
 
     FMQuery> WorkOn sample2
     
