@@ -93,6 +93,8 @@ $(libfmlinalg_static_lib):
 clean:
 	$(RM) *.o *.gch
 	$(RM) -rf ./bin
+	(cd $(TRACE_LOADER_SRC_PATH) && $(RM) *.o)
+	(cd $(CLI_SRC_PATH) && $(RM) *.o)
 	(cd $(FMCUSPARSELINALG_PATH) && make clean)
 
 clean_tmp:
