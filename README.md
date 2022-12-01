@@ -38,7 +38,7 @@ Example of sample2: data flows between buffer read and buffer write. Check [samp
 ### 2. Advanced System Call Query
 Query data flows among all common source syscalls to all common sink syscalls:
 
-    FMQuery> Query SYSCALL read,recv*,mmap TO write,send*
+    FMQuery> Query SYSCALL read,recv*,mmap TO SYSCALL write,send*
     
 That might print multiple records as it performs a n-to-m query. You might want to narrow down the query range by first checking the system call trace:
 
@@ -51,7 +51,7 @@ That might print multiple records as it performs a n-to-m query. You might want 
     
 "119916" and "184288" are their instruction index respectively. Thus, you can perfrom query upon a subset of the trace:
 
-    FMQuery> QueryInRange (119916,184288) SYSCALL read,recv*,mmap TO write,send*
+    FMQuery> QueryInRange (119916,184288) SYSCALL read,recv*,mmap TO SYSCALL write,send*
 
 Or, just query the data flow between these two syscall instructions:
 
@@ -63,7 +63,7 @@ System call queries can be combained with instruction queries.
 For example, query data flows from all common source syscalls to all return instructions 
 (usually for checking whether RIP is influenced by any source syscall): 
 
-    FMQuery> Query SYSCALL read,recv* TO ret
+    FMQuery> Query SYSCALL read,recv* TO INSTR ret
 
 Also, you may print instruction traces for better understanding (for example, the 999th instruction in Sample2 is a RET instruction):
 
