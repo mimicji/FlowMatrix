@@ -1,5 +1,8 @@
 # FlowMatrix
-A query-style tool for GPU-assisted offline information-flow analysis.
+A query-style tool for GPU-assisted offline information-flow analysis. 
+
+[Paper](https://mimicji.github.io/file/flowmatrix_paper.pdf) | [Presentation](https://www.youtube.com/watch?v=xfFchQkjQ1A) | [Slides](https://mimicji.github.io/file/flowmatrix_slide.pdf)
+
 
 ## Cite
 > Kaihang Ji, Jun Zeng, Yuancheng Jiang, and Zhenkai Liang, Zheng Leong Chua, Prateek Saxena and Abhik Roychoudhury, *FlowMatrix: GPU-Assisted Information-Flow Analysis through Matrix-Based Representation*.  In *USENIX Security Symposium*, 2022.
